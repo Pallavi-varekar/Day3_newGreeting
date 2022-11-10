@@ -20,12 +20,14 @@ public class GreetingService {
     }
     public List<Greeting> getmsgwithuser(){
         List<Greeting> msg= greetingRepo.findAll();
-
-
         return msg;
 
-    }
-
-
 
     }
+
+
+    public Optional<Greeting> findById(int id) {
+        return greetingRepo.findById(id);
+
+    }
+}

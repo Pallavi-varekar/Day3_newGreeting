@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class GreetingController {
@@ -20,6 +21,12 @@ GreetingService greetingService;
     public List<Greeting> getmsg(){
         List<Greeting> msg= greetingService.getmsgwithuser();
         return msg;
+    }
+    @GetMapping("/find/{id}")
+    public Optional<Greeting> findbyid(@PathVariable("id") int id)
+    {
+        Optional<Greeting> greeting=greetingService.findById(id);
+        return greeting;
     }
 
 
