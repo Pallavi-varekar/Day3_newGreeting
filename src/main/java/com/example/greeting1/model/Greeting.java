@@ -8,6 +8,14 @@ public class Greeting {
 
     private int id;
 
+    public Greeting(int id, String name, String message) {
+        this.id = id;
+        this.name = name;
+        this.message = message;
+    }
+
+
+
     public int getId() {
         return id;
     }
