@@ -3,12 +3,9 @@ package com.example.greeting1.controller;
 import com.example.greeting1.model.Greeting;
 import com.example.greeting1.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.w3c.dom.css.Counter;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.List;
 
 @RestController
 public class GreetingController {
@@ -19,4 +16,13 @@ GreetingService greetingService;
         greetingService.getmsg(greeting);
         return "hello"+" "+greeting.getId()+" "+greeting.getName()+" "+greeting.getMessage();
     }
-}
+    @GetMapping("/get")
+    public List<Greeting> getmsg(){
+        List<Greeting> msg= greetingService.getmsgwithuser();
+        return msg;
+    }
+
+
+
+    }
+

@@ -20,6 +20,10 @@ public class Greeting {
     public Greeting() {
 
     }
+    public Greeting(int incrementAndGet, String message){
+        this.id = incrementAndGet;
+        this.message = message;
+    }
 
 
     public int getId() {
