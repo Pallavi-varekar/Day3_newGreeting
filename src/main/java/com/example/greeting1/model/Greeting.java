@@ -1,9 +1,12 @@
 package com.example.greeting1.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+@Entity
 public class Greeting {
+    @Id
+    @GeneratedValue
 
 
     private int id;
@@ -14,6 +17,9 @@ public class Greeting {
         this.message = message;
     }
 
+    public Greeting() {
+
+    }
 
 
     public int getId() {
