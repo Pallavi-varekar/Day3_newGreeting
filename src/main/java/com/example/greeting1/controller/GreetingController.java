@@ -11,6 +11,6 @@ public class GreetingController {
     @PostMapping("/post")
     public String sayhello(@RequestBody Greeting greeting){
 
-        return "Hello" +"  "+ greeting.getName() + " " + greeting.getMessage()+"!";
+        return "Hello " +"  "+ greeting.getName() + " " + greeting.getMessage()+"!";
     }
 }
